@@ -1,0 +1,6 @@
+---
+- hosts: testwindows
+  tasks:
+    - name: Check the version
+      debug:
+        msg: "The hostname {{ ansible_hostname }}" 

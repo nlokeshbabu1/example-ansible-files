@@ -1,0 +1,15 @@
+---
+- hosts: linux
+  tasks:
+    - name: gather info on installed packges
+      package_facts:
+        manager: auto
+
+    - name: list installed packages
+      debug:
+        var: ansible_facts.packages
+
+
+
+
+

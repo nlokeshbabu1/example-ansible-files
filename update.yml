@@ -1,0 +1,7 @@
+---
+- hosts: 192.168.10.8
+  tasks: 
+    - name: update the system
+      apt:
+        name: "*"
+        state: latest
