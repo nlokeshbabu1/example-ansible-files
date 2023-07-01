@@ -1,0 +1,5 @@
+---
+- hosts: 10.41.0.191
+  tasks: 
+    - name: install msoffice
+      win_command: C:\Program Files (x86)\Microsoft Office\Office14 /uninstall

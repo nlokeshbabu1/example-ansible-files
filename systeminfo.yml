@@ -1,0 +1,1 @@
+---- name: system information  hosts: all  tasks:    - name:system info      debug:                                                                                                                  var: ansible_facts       

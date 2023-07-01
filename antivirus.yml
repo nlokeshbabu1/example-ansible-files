@@ -1,0 +1,5 @@
+---
+- hosts: 10.41.0.191
+  tasks: 
+    - name: install antivirus
+      win_command: C:\Users\demo\Downloads\avast_business_security_setup_offline.exe /silent

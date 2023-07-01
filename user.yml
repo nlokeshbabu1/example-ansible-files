@@ -1,0 +1,13 @@
+---
+- hosts: windows
+  tasks:
+    - name: Ensure user windows is present
+      win_user:
+        name: windows 
+        password: drdl@123
+        state: present
+        groups:
+          - Administrators
+
+
+

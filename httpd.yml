@@ -1,0 +1,13 @@
+---
+- hosts: Testlinux
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+    - name: started and enabled httpd
+      service:
+        name: httpd
+        enabled: true 
+        state: started
+  

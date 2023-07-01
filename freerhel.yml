@@ -1,0 +1,10 @@
+---
+- hosts: Testlinux
+  tasks:
+    - name: Disk usage 
+      command: df -h
+      register: space
+
+    - name: free space
+      command: free     
+
