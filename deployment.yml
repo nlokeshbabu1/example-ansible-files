@@ -1,0 +1,19 @@
+apiVersion: apps/v1 #specifies the kubernetes ApI version to used
+kind: deployment    #specifies the kind of kubernetes object to create
+metadata:           #contains metadata about the deployment
+  name: my-deployment 
+spec:     # contains the specification for the deployment
+  replicas: 3 #desired number of replicas or instance of application should run
+  selector:  #Defines the label selector used to determine which Pods are part of this Deployment.
+    matchLabels:  #Specifies the labels that Pods must have in order to be considered part of this Deployment
+      app: my-app
+  template:  #Defines the Pod template that will be used to create new Pods for the Deployment.
+    metadata: #Contains metadata for the Pod template
+      labels: #Specifies the labels to be applied to the Pods created from this template.
+        app: my-app
+    spec: #Defines the specification for the Pod template
+      containers: #Specifies the containers to be run in the Pods
+        - name: my-conainer #Specifies the name of the container within the Pod.
+          image: nginx:latest #Specifies the Docker image to be used for the container.
+          ports:
+            - containerPort: 80
