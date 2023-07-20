@@ -1,0 +1,7 @@
+# vim /etc/yum.repos.d/AppStream.repo
+[AppStream]
+name=
+baseurl=file:///root
+gpgkey=file:///etc
+enabled=1 
+gpgcheck=0
