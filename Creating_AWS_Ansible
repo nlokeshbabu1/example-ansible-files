@@ -1,0 +1,32 @@
+#Create aws user with ec2 admin permission
+
+aws_console_login  > IAM > Role > Create_new_role 
+
+#Create access and secret key with outside access
+
+#Now we to install boto3 for aws
+
+pip install boto3
+
+#Now we need aws collection
+
+ansible-galaxy collection install amazon.aws
+
+
+#Now we need to ansible-vault  the access and secret key using command
+
+openssl rand -base64 2048 > vault.pass
+
+#Add the aws key to above vault 
+
+ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
+
+ansible-vault edit group_vars/all/pass.yml --vault-password-file vault.pass  >> for editing
+
+#Command for ansible to aws ec2 instance
+
+sudo ansible-playbook ec2-create-yml --vault-password-file vault.pass
+
+#Now create inventory.ini add the instance ip 
+
+#Now create playbook for tasks to run the instance 
